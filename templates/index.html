@@ -1,0 +1,16 @@
+{% extends 'base_template.html' %}
+{% block body %}
+    <a href="{% url 'create' %}">create</a> <br>
+    {% for item in object_list %}
+        {{ item.title }}
+        <a href="{{ item.edit_url }}">edit</a>
+    {% endfor %}
+{#    <p>_________________________________________________________________________</p>#}
+    <hr>
+
+    {% for item in title_selected %}
+        {{ item.title }}
+        <a href="{{ item.edit_url }}">edit</a>
+    {% endfor %}
+
+{% endblock body %}
